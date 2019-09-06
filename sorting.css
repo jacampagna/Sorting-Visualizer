@@ -1,0 +1,11 @@
+.alert{
+    display: none;
+    margin-bottom: 0;
+}
+
+#speed{
+	color:darkgray;
+}
+.navbar-expand-md{
+	min-width: 800px;
+}
