@@ -1,8 +1,80 @@
+
 <!DOCTYPE html>
-<html> 
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<p><a href="sorting.html">Sorting</a>.</p>
+<html>
+
+<head>
+  <title>Sorting Algorithm Visualizer</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel = "stylesheet" type = "text/css" href = "sorting.css" />
+</head>
+
+<body style= "background-color: #333;">
+  <div id = "unselected" class="alert alert-danger alert-dismissable">
+    <button  type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            Select a Sorting Algorithm From the Drop Down Menu!
+  </div>
+  <div  id = "changeSize" class="alert alert-danger alert-dismissable">
+    <button  type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            Stop or Reset Before You Change Size!
+  </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style = "min-width: 1150px;">
+      <a class="navbar-brand"href="#">Sorting Algorithm Visualizer</a>
+      <div class="container">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+        	<div class="dropdown" id=>
+            <button id = "Algos" class="btn btn-secondary dropdown-toggle"
+                type="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+              Select Sorting Algorithm
+            </button>
+            <div class="dropdown-menu" aria-labelledby="Algos" >
+              <a class="dropdown-item" href="#" onclick="selectAlgorithm('Selection Sort');return false;">Selection Sort</a>
+              <a class="dropdown-item" href="#" onclick="selectAlgorithm('Insertion Sort');return false;">Insertion Sort</a>
+              <a class="dropdown-item" href="#" onclick="selectAlgorithm('Merge Sort');return false;">Merge Sort</a>
+              <a class="dropdown-item" href="#" onclick="selectAlgorithm('Quick Sort');return false;">Quick Sort</a>
+              <a class="dropdown-item" href="#" onclick="selectAlgorithm('Radix Sort');return false;">Radix Sort</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a class="nav-link" href = "#" onclick="play()">Start</a>
+        </li>
+        <li>
+          <a class="nav-link" href = "#" onclick="stop()">Stop</a>
+        </li>
+        <li>
+          <a class="nav-link" href = "#" onclick="reset()">Reset</a>
+        </li>
+        <li>
+          <a class="nav-link" href = "#" onclick="setSize()"> Array Size</a>
+        </li>
+        <li>
+            <div class="slidecontainer">
+                <input type="range" min="10" max="300" value="30" class="nav-link range-field w-100" id="sizeSlider">
+            </div>
+        </li>
+        <li>
+          <span id = "speed" class="nav-link"> Speed</span>
+        </li>
+        <li>
+            <div class="slidecontainer">
+                <input type="range" min="1" max="50" value="10" class="nav-link range-field w-100" id="speedSlider">
+            </div>
+        </li>
+          
+      </ul>
+      </div>
+    </nav>
+
+
+<div class="container" id="main">
+    <canvas id="myCanvas"  width = "1050px" height ="550px"></canvas>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="sorting.js"></script>
 </body>
-</html>
